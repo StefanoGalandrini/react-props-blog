@@ -14,8 +14,8 @@ function Card({ title, content, tags, published }) {
   const imageUrl = getRandomImage();
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="max-w-sm overflow-hidden rounded-xl border border-gray-400 bg-gray-200 shadow-lg">
+    <div className="flex items-stretch justify-center">
+      <div className="max-w-xs overflow-hidden rounded-xl border border-gray-400 bg-gray-200 shadow-lg">
         <img className="w-full" src={imageUrl} alt="Immagine del post" />
         <div className="p-6 pb-3">
           <div className="mb-2 text-center text-2xl font-bold uppercase text-gray-900">

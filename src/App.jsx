@@ -18,7 +18,7 @@ function App() {
           Un Blog a caso
         </h1>
 
-        <div className="container mx-auto pb-[12vh]">
+        <div className="mx-auto w-[80vw] pb-[12vh]">
           <div className="flex flex-wrap justify-center gap-4">
             {posts
               .filter((post) => post.published)
