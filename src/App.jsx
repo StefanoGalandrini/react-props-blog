@@ -20,7 +20,7 @@ function App() {
         </h1>
 
         <div className="mx-auto w-[80vw] pb-[12vh]">
-          {publishedPosts.length > 0 ? (
+          {publishedPosts.length > 0 && (
             <div className="flex flex-wrap justify-center gap-4">
               {publishedPosts.map((post) => (
                 <Card
@@ -32,10 +32,11 @@ function App() {
                 />
               ))}
             </div>
-          ) : (
-            <p className="text-center">
+          )}
+          {publishedPosts.length === 0 && (
+            <h2 className="mt-8 text-center text-xl font-bold text-red-900">
               Non ci sono post da mostrare al momento.
-            </p>
+            </h2>
           )}
         </div>
       </div>
