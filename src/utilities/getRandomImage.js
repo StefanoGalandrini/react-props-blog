@@ -7,8 +7,7 @@ const getRandomImage = () =>
 {
 	if (usedIds.size >= totalIds)
 	{
-		console.log("Tutti gli ID delle immagini sono stati utilizzati.");
-		return "../assets/imgs/no-image.jpg"; // img di fallback
+		usedIds.clear();
 	}
 
 	let id;
