@@ -8,6 +8,7 @@ import TheHeader from './components/TheHeader';
 
 function App() {
   const uniqueTags = Array.from(new Set(posts.map((post) => post.tags).flat()));
+  const publishedPosts = posts.filter((post) => post.published);
 
   return (
     <>
@@ -19,10 +20,9 @@ function App() {
         </h1>
 
         <div className="mx-auto w-[80vw] pb-[12vh]">
-          <div className="flex flex-wrap justify-center gap-4">
-            {posts
-              .filter((post) => post.published)
-              .map((post) => (
+          {publishedPosts.length > 0 ? (
+            <div className="flex flex-wrap justify-center gap-4">
+              {publishedPosts.map((post) => (
                 <Card
                   key={post.id}
                   title={post.title}
@@ -31,10 +31,16 @@ function App() {
                   published={post.published}
                 />
               ))}
-            <TheFooter />
-          </div>
+            </div>
+          ) : (
+            <p className="text-center">
+              Non ci sono post da mostrare al momento.
+            </p>
+          )}
         </div>
       </div>
+
+      <TheFooter />
     </>
   );
 }
